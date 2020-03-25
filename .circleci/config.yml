@@ -28,15 +28,9 @@ jobs:
 
 workflows:
   version: 2
-  test-publish:
+  publish:
     jobs:
-      - test:
-          filters: # required since `publish` has tag filters AND requires `test`
-            tags:
-              only: /.*/
       - publish:
-          requires:
-            - test
           filters:
             tags:
               only: /^v.*/
