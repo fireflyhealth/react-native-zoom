@@ -7,6 +7,12 @@ executors:
     working_directory: ~/repo
 
 jobs:
+
+  test:
+    executor: node
+    steps:
+      - checkout
+
   publish:
     executor: node
 
